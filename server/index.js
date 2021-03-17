@@ -1,6 +1,11 @@
 const express = require("express");
+const helmet = require("helmet");
 
-const app = express()
+const app = express();
+
+//middleware
+app.use(helmet());
+
 
 //endpoint main
 app.get("/", (req, res) => {
