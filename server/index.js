@@ -1,5 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
+const frasiGandhi = require("./db-frasiGandhi");
 
 const app = express();
 
@@ -23,20 +24,20 @@ const frasiVangelo = () => {
 app.get("/", (req, res) => {
     res.status(200)
     .send("Hello world!");
-})
+});
 
 //second endpoint
 app.get("/frasi-vangelo", (req, res) => {
     res.status(201)
     .send(frasiVangelo());
-})
+});
 
 //third endpoint
-app.get("/italia", (req, res) => {
+app.get("/frasi-gandhi", (req, res) => {
     res.status(202)
-    .send("Hello Italy!");
-})
+    .send(frasiGandhi());
+});
 
 app.listen(3000, () => {
-    console.log("Hello developers!")
-})
+    console.log("Hello developers. I'm on port 3000!")
+});
