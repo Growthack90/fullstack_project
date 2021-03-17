@@ -6,6 +6,10 @@ const app = express();
 //middleware
 app.use(helmet());
 
+//db frasi vangelo
+const frasiVangelo = () => {
+    return "frase Vangelo";
+}
 
 //endpoint main
 app.get("/", (req, res) => {
@@ -14,9 +18,9 @@ app.get("/", (req, res) => {
 })
 
 //second endpoint
-app.get("/europa", (req, res) => {
+app.get("/frasi-vangelo", (req, res) => {
     res.status(201)
-    .send("Hello Europe!");
+    .send(frasiVangelo());
 })
 
 //third endpoint
